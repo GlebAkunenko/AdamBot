@@ -1,11 +1,11 @@
 from vk_api import *
 from keyboards import Keyboard, data
 import time as t
-import json, random
+import json, random, os
 from vk_api.keyboard import VkKeyboard, VkKeyboardColor
 
-
-vk = VkApi(token='5b3dee2361ea3d897c53eb8a9ec21b29de2af04f699a7b358189b7d1cc4d62639905c3ea12427359da4b4')
+token = os.environ.get("TOKEN")
+vk = VkApi(token=token)
 vk._auth_token()
 
 options = json.loads(open("options.json", 'r').read())
